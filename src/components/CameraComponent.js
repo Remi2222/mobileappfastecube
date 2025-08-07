@@ -8,10 +8,9 @@ import {
   Dimensions,
   Modal,
   Image,
-  PanGestureHandler,
-  State,
   Animated,
 } from 'react-native';
+import { PanGestureHandler, State } from 'react-native-gesture-handler';
 import { Camera } from 'expo-camera';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
