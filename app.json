@@ -13,17 +13,55 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Cette application utilise la caméra pour l'authentification biométrique, le scan de documents et la prise de photos pour les tickets.",
+        "NSLocationWhenInUseUsageDescription": "Cette application utilise la géolocalisation pour ajouter automatiquement les coordonnées GPS aux photos et tickets.",
+        "NSPhotoLibraryUsageDescription": "Cette application accède à votre galerie pour sauvegarder les photos prises.",
+        "NSMicrophoneUsageDescription": "Cette application utilise le microphone pour les fonctionnalités vocales."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "CAMERA",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "RECORD_AUDIO"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-font",
+      "expo-secure-store",
+      "expo-web-browser",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Cette application utilise la caméra pour l'authentification biométrique, le scan de documents et la prise de photos pour les tickets."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Cette application utilise la géolocalisation pour ajouter automatiquement les coordonnées GPS aux photos et tickets."
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Cette application accède à votre galerie pour sauvegarder les photos prises.",
+          "savePhotosPermission": "Cette application sauvegarde les photos dans votre galerie."
+        }
+      ]
+    ]
   }
 }
